@@ -3,14 +3,14 @@ import java.awt.*;
 
 public class MyTextField extends JTextField {
 
-    private String number = "0";
+    private String opNow = "";
 
-    public  MyTextField(String number) {
-        super(number);
+    public  MyTextField(String opNow) {
+        super(opNow);
     }
 
-    public void setNumber(String number) {
-        this.number = number;
+    public void setOpNow(String opNow) {
+        this.opNow = opNow;
         repaint();
     }
 
@@ -19,6 +19,7 @@ public class MyTextField extends JTextField {
         super.paint(g);
         g.setColor(Color.WHITE);
         g.setFont(new Font( "Arial",Font.BOLD, 18));
-        g.drawString(number, getWidth()/2, 23);
+        g.getFontMetrics();
+        g.drawString(opNow, (getWidth()-g.getFontMetrics().stringWidth(opNow))-5, (getHeight()/2)-30);
     }
 }
